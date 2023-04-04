@@ -9,6 +9,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d("LIFE_CYCLE","MainActivity 1 onCreate")
+        openFragment()
+    }
+    fun openFragment(){
+        val transaction = supportFragmentManager.beginTransaction()
+        var fragment1 = Fragment1()
+        transaction.add(R.id.fragment_1_container,fragment1)
+        transaction.commit()
     }
 
     override fun onPause() {
